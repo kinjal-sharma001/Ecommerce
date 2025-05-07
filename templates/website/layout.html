@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ac6bf4de74.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/layout.css?{% now "U" %}">
+    {% block css %}{% endblock %}
+    <title>
+        {% block title %}eCommerce{% endblock %}
+    </title>
+</head>
+<body>
+    <header class='fr'>
+        <a class="logo" href='{% url "home" %}'>
+            <img width='150' src="/static/images/mainLogo.png" alt="logo">
+        </a>
+
+        <div class="right fr">
+            <ul class='fr'>
+                <li><a href="{% url "cart" %}" class='fr cartLink'>
+                    <img width='30' src="/static/images/Cart.png" alt="cartLogo">
+                    <p>Cart</p>
+                    <p class='cartLength'>{{count}}</p>
+                </a></li>
+            </ul>
+    
+            {% block is_login %}
+
+                {% if user.is_authenticated %}
+                
+                <div id='show' class='fr'> 
+
+                    {% if user.userprofile.profile_image.url or user.userprofile.profile_image %}
+                        <img class='user_image' width='40' src="{{user.userprofile.profile_image.url}}" alt="img">
+                    {% else %}
+                        <img class='user_image' width='40' src="../../media/profile_image/default.jpg" alt="img">
+                    {% endif %}
+
+                    <div class="fc dropdown">
+                        <p class='dropdown_child'>{{user.username}}</p>
+                        <a class='dropdown_child' href="{% url "profile" %}">Profile</a>
+                        <a class='dropdown_child' href="{% url "logout" %}">Logout</a>
+                    </div>
+                </div>
+
+                {% else %}
+                    <a href="{% url 'login' %}"><button>Login</button></a>
+                    <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+                {% endif %}
+
+            {% endblock %}
+
+        </div>
+    </header>
+
+    <div class='mainSection'>
+        {% block main %}{% endblock %}
+    </div>
+
+    <footer class='fr'>This is Footer</footer>
+</body>
+</html>

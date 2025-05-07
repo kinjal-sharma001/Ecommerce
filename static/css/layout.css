@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Noto+Sans+JP:wght@100..900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --primaryColor: #004141;
+
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.fc{
+    flex-direction: column;
+}
+
+.fc, .fr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header, footer{
+    background-color: var(--primaryColor);
+    justify-content: space-around !important;
+    padding: 1rem;
+    color: white;
+    height: 10vh;
+}
+
+header{
+    position: sticky;
+    top: 0;
+}
+
+.logo img{
+    filter: invert(1);
+}
+
+.right{
+    gap: 2rem;
+}
+
+ul{
+    list-style: none;
+}
+
+.cartLink{
+    color: white;
+    text-decoration: none;
+    gap: 5px;
+    position: relative;
+}
+
+.cartLength{
+    position: absolute;
+    left: 1rem;
+    bottom: 5px;
+}
+
+/* ========================================= */
+
+.user_image{
+    border-radius: 50%;
+}
+
+#show{
+    /* border: 2px solid red; */
+    position: relative;
+}
+
+.dropdown{
+    /* border: 2px solid red; */
+
+    display: none !important;
+
+    position:absolute;
+    top: 2.5rem;
+    left: 0;
+
+    background-color: black;
+    color: white;
+
+    width: 15rem;
+    height: 10rem;
+    border-radius: 1rem;
+
+    align-items: start !important;
+    justify-content: start !important;
+    gap: 0.5rem;
+
+    padding: 1rem;
+
+}
+
+.dropdown_child{
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 0.3rem;
+
+    transition: all 0.2s;
+}
+
+.dropdown_child:hover{
+    transform: translateX(0.5rem);
+    cursor: pointer;
+}
+
+.dropdown a{
+    color: white;
+    text-decoration: none;
+}
+
+#show:hover .dropdown{
+    display: flex !important;
+}
+
+/* ========================================= */
+
+.mainSection{
+    min-height: 85vh;
+}
+
+footer{
+    height: 3vh !important;
+}

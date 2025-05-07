@@ -1,0 +1,53 @@
+{% extends "website/layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/user_profile.css?{% now "U" %}">
+{% endblock %}
+
+{% block is_login %}
+
+{% if user.user.is_authenticated %}
+                
+    <div id='show' class='fr'> 
+
+        {% if user.profile_image.url or user.profile_image %}
+            <img class='user_image' width='40' src="{{user.profile_image.url}}" alt="img">
+        {% else %}
+            <img class='user_image' width='40' src="../../media/profile_image/default.jpg" alt="img">
+        {% endif %}
+
+        <div class="fc dropdown">
+            <p class='dropdown_child'>{{user.user.username}}</p>
+            {% comment %} <a class='dropdown_child' href="{% url "profile" %}">Profile</a> {% endcomment %}
+            <a class='dropdown_child' href="{% url "logout" %}">Logout</a>
+        </div>
+    </div>
+
+    {% else %}
+        <a href="{% url 'login' %}"><button>Login</button></a>
+        <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+    {% endif %}
+
+{% endblock %}
+
+{% block main %}
+
+    <div class="user_profile">
+        <div class="profile_image_cover">
+            {% if user.profile_image.url or user.profile_image %}
+                <img class='profile_image' width='150' src="{{user.profile_image.url}}" alt="{{user.username}}">
+            {% else %}
+                <img class='profile_image' width='150' src="../../../media/profile_image/default.jpg" alt="default">
+            {% endif %}
+        </div>
+        
+        <div class="info">
+            <h2>{{user.user.username}}</h2>
+            <p>{{user.phone_number}}</p>
+            <p>{{user.user.email}}</p>
+            <a href="{% url "password_reset" %}">password_reset</a>
+        </div>
+
+    </div>
+
+{% endblock %}

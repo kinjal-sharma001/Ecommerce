@@ -1,0 +1,19 @@
+.user_profile{
+    /* border: 2px solid red; */
+    padding: 2rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 3rem;
+}
+
+.profile_image_cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}

@@ -1,0 +1,47 @@
+{% extends "website/layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/Cart_page.css?{% now "U" %}">
+{% endblock %}
+
+{% block main %}
+
+<main>
+    <h1>Shopping Cart</h1>
+
+<section class='cart fc'>
+    {% if cart_items %}
+
+    <div class="cartItem fc">
+        {% for cart_item in cart_items %}
+        <div class='cartItem item fr'>
+            <img width='200' src="{{cart_item.product.image.url}}" alt="">
+                <div class='content fc'>
+                    <h2>{{cart_item.product.title}}</h1>
+                        <h3> <i class="fa-solid fa-indian-rupee-sign"></i> {{cart_item.product.price}}</h3>
+                        <div>
+                            <a href="{% url "remove" cart_item.product.id %}">
+                                <button class='btn'>-</button>
+                            </a>
+                            <span>{{cart_item.quantity}}</span>
+                            <a href="{% url "addOnCart" cart_item.product.id %}">
+                                <button class='btn'>+</button>
+                            </a>
+                        </div>
+                </div>
+        </div>
+            {% endfor %}
+    </div>
+
+    {% else %}
+
+    <div class='fc'>
+        <p>Empty Cart</p>
+        <a href="{% url "home" %}">Continue Shopping</a>
+    </div>
+
+    {% endif %}
+</section>
+
+{% endblock %}
+</main>

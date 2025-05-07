@@ -1,0 +1,51 @@
+.sigup_form{
+    min-height: 80vh;
+}
+
+.sigup_form h2{
+    margin-bottom: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label{
+    display: block;
+}
+
+.helptext{
+    color: grey;
+    display: block;
+    font-size: small;
+}
+
+form ul li{
+    color: grey;
+    font-size: small;
+}
+
+form input{
+    outline: none;
+    padding: 2px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.244);
+    width: 100%;
+}
+
+form input[type='file']{
+    border-bottom: none;
+}
+
+.btn{
+    margin: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    background-color: #00444487;
+    color: white;
+    border-radius: 7px;
+
+}

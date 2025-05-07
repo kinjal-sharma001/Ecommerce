@@ -1,0 +1,31 @@
+{% extends "website/layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="static/css/Home.css?{% now "U" %}">
+{% endblock %}
+
+{% block main %}
+<center>
+    <h1>Products</h1>
+</center>
+
+<section class='product_section fr'>
+
+    {% for Product in Products %}
+
+    <div class="product_card fc">
+        <a class='link fc' href="{% url "product_details" Product.id %}">
+            <h3>{{Product.title}}</h3>
+            <img width='70%' src="{{Product.image.url}}" alt="{{Product.title}}">
+        </a>
+        <h3>{{Product.price}}</h3>
+        <a href="{% url "add" Product.id %}">
+            <button>Add To Cart</button>
+        </a>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "website/layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/Product_details.css?{% now "U" %}">
+{% endblock %}
+
+{% block main %}
+
+<div class='fr product_details'>
+    <img width='400' src="{{product.image.url}}" alt="{{product.title}}">
+    
+    <div class="content fc">
+        <h2>{{product.title}}</h2>
+        <hr>
+        <h2>Price : <i class="fa-solid fa-indian-rupee-sign"></i> {{product.price}}</h2>
+        <a href="#">
+            <button class='btn'>Add To Cart</button>
+        </a>
+        <a href="#">
+            <button class='btn'>Buy Now</button>
+        </a>
+        <hr>
+
+        <p>{{product.description}}</p>
+    </div>
+</div>
+
+{% endblock %}

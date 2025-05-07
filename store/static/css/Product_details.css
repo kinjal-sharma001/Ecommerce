@@ -1,0 +1,29 @@
+.product_details{
+    /* align-items: start !important; */
+    gap: 2rem;
+}
+
+main{
+    align-items: start !important;
+}
+
+.content{
+    align-items: start !important;
+    gap: 1rem;
+    /* border: 2px solid red; */
+}
+
+.btn{
+    cursor: pointer;
+    width: 10rem;
+    padding: 8px;
+    border: none;
+    background-color: #004444b9;
+    color: white;
+    border-radius: 7px;
+    
+}
+
+hr{
+    width: 90%;
+}

@@ -1,0 +1,44 @@
+main{
+    padding: 1rem;
+}
+
+.cart{
+    /* border: 2px solid red; */
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(233, 233, 233);
+
+}
+
+.cartItem{
+    justify-content: start !important;
+    align-items: start !important;
+    gap: 2rem;
+    /* border: 2px solid red; */
+}
+
+.content{
+    /* border: 2px solid red; */
+    height: 12.5rem;
+    gap: 1rem;
+    justify-content: start !important;
+    align-items: start !important;
+}
+
+.emptyMsg{
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    height: 1.5rem;
+    width: 1.5rem;
+
+}
+
+.item{
+    align-items: start !important;
+}
